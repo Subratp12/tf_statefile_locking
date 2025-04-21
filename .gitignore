@@ -1,3 +1,36 @@
+
 .terraform.lock.hcl
 .terraform
 terraform.tfstate.backup
+
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Terraform CLI cache files
+.terraform/
+
+# Ignore override files as they are usually local
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Editor swap/backup files
+*.swp
+*.swo
+*.bak
+*~
+
+# Ignore .idea/ or .vscode if you're using JetBrains or VS Code
+.idea/
+.vscode/
+
+# Ignore SSH key files if accidentally placed here
+*.pem
+*.key
