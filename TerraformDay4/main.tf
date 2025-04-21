@@ -34,3 +34,12 @@ resource "aws_subnet" "subnet_UAT" {
     Name = "Prod_Subnet"
   }
 }
+
+ resource "aws_subnet" "subnet_subrat" {
+  vpc_id     = aws_vpc.VPC.id
+  cidr_block = "10.0.9.0/24"
+  tags = {
+    Name = "Subrat_Subnet"
+  }
+}
+
