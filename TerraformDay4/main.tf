@@ -21,11 +21,3 @@ resource "aws_subnet" "subnet_test" {
   }
 
 }
-resource "aws_subnet" "subnet_UAT" {
-    vpc_id = aws_vpc.VPC.id
-    cidr_block = "10.0.4.0/24"
-    tags = {
-        Name = "UAT_Subnet"
-    }
-  
-}
