@@ -3,5 +3,7 @@ terraform {
     bucket = "sub12rat94"
     key    = "dev/terraform.tfstate"
     region = "ap-south-2"
+    dynamodb_table = "subrat-dynamodb-table"
+    encrypt = true 
   }
 }
