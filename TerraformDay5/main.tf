@@ -1,8 +1,13 @@
 resource "aws_instance" "ec2" {
   ami           = "ami-05cef57fad40b2755"
-  instance_type = "t3.micro"
+  instance_type = "t3.nano"
   key_name      = "AWS_hyd"
   tags = {
-    Name        = "MyEC2Instance"
+    Name        = "Padhi"
   }
+
+
+ lifecycle {
+     create_before_destroy = true
+}
 }
