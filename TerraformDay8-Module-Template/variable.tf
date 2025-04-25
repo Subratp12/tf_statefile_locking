@@ -1,37 +1,50 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources in"
   type        = string
-  
+  default     = ""
+
+
 }
 
 variable "ami_id" {
   description = "The AMI ID to use for the EC2 instance"
   type        = string
+  default     = ""
 }
 
 variable "instance_type" {
   description = "The instance type for the EC2 instance"
   type        = string
+  default     = ""
+
 }
 
 variable "key_name" {
   description = "The name of the key pair to use for SSH access to the EC2 instance"
   type        = string
+  default     = ""
+
 }
 
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC"
   type        = string
+  default     = ""
+
 }
 
 variable "public_subnet_cidr" {
   description = "The CIDR block for the VPC"
   type        = list(string)
+  default     = []
+
 }
 
 variable "availability_zone" {
   description = "The availability zone to create resources in"
   type        = list(string)
+  default     = []
+
 }
 
 variable "map_public_ip_on_launch" {
@@ -42,12 +55,20 @@ variable "map_public_ip_on_launch" {
 variable "pvt_subnet_cidr" {
   description = "The CIDR block for the VPC"
   type        = list(string)
+  default     = []
+}
+
+variable "IGW" {
+  description = "The Internet Gateway ID"
+  type        = string
+  default     = ""
+
 }
 
 variable "security_group_name" {
   description = "Name of the Security Group"
   type        = string
-  default     = "TF_SG"
+  default     = ""
 }
 
 variable "ingress_rules" {
@@ -104,10 +125,11 @@ variable "bucket_suffix_special" {
 variable "s3_acl" {
   description = "Canned ACL to apply to the S3 bucket"
   type        = string
+  default     = ""
 }
 
 variable "s3_bucket_name" {
   description = "Name of the S3 bucket"
   type        = string
-  default     = "tf-subrat-bucket-1234567890"  
+  default     = ""
 }

@@ -2,6 +2,14 @@ resource "aws_vpc" "TF_VPC" {
   cidr_block = var.vpc_cidr
 }
 
+resource "aws_internet_gateway" "TF_IGW" {
+  vpc_id = aws_vpc.TF_VPC.id
+
+  tags = {
+    Name = "TF_IGW"
+  }
+}
+
 resource "aws_subnet" "TF_sub_Pub_1" {
   vpc_id                  = aws_vpc.TF_VPC.id
   cidr_block              = var.public_subnet_cidr[0]
@@ -22,19 +30,23 @@ resource "aws_subnet" "TF_sub_Pub_2" {
   }
 }
 
+
+
+
+
 resource "aws_subnet" "TF_sub_pvt_1" {
-  vpc_id                  = aws_vpc.TF_VPC.id
-  cidr_block              = var.pvt_subnet_cidr[0]
-  availability_zone       = var.availability_zone[0]
+  vpc_id            = aws_vpc.TF_VPC.id
+  cidr_block        = var.pvt_subnet_cidr[0]
+  availability_zone = var.availability_zone[0]
   tags = {
     Name = "TF_sub_pvt_1"
   }
 }
 
 resource "aws_subnet" "TF_sub_pvt_2" {
-  vpc_id                  = aws_vpc.TF_VPC.id
-  cidr_block              = var.pvt_subnet_cidr[1]
-  availability_zone       = var.availability_zone[1]
+  vpc_id            = aws_vpc.TF_VPC.id
+  cidr_block        = var.pvt_subnet_cidr[1]
+  availability_zone = var.availability_zone[1]
   tags = {
     Name = "TF_sub_pvt_2"
   }
@@ -73,6 +85,7 @@ resource "aws_instance" "TF_EC2" {
   ami           = var.ami_id
   instance_type = var.instance_type
   key_name      = var.key_name
+
 }
 
 resource "random_string" "bucket_suffix" {
