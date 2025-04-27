@@ -39,5 +39,3 @@ resource "aws_subnet" "subnet_UAT" {
 }
 
 
-
-

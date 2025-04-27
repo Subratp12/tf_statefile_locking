@@ -1,6 +1,6 @@
 variable "vpc_cidr" {
-  type        = string
-  
+  type = string
+
 }
 
 variable "public_subnet_cidr" {
@@ -8,10 +8,10 @@ variable "public_subnet_cidr" {
   type        = list(string)
 }
 
-variable "pvt_sub_cidr" {   
+variable "pvt_sub_cidr" {
   description = "List of private subnet CIDRs"
-  type        = list(string)    
-  
+  type        = list(string)
+
 }
 
 variable "availability_zone" {
@@ -20,34 +20,34 @@ variable "availability_zone" {
 }
 
 variable "map_public_ip_on_launch" {
-  type        = bool
-  
+  type = bool
+
 }
 
 variable "aws_region" {
-  type        = string
-  
+  type = string
+
 }
 
 variable "ami_id" {
-  type        = string
-  
+  type = string
+
 }
 variable "instance_type" {
-  type        = string
-  
+  type = string
+
 }
 
 variable "key_name" {
-    type        = string
-  
+  type = string
+
 }
 
 variable "S3_bucket" {
-    description = "S3 bucket name for storing files"
-    type        = string
-    default = ""
-  
+  description = "S3 bucket name for storing files"
+  type        = string
+  default     = ""
+
 }
 
 # variable "route_cidr_block" {

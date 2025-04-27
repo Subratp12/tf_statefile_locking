@@ -9,6 +9,7 @@ module "test" {
   availability_zone       = var.availability_zone       # Availability zone for the public subnet
   map_public_ip_on_launch = var.map_public_ip_on_launch # Map public IP on launch}
   pvt_sub_cidr = var.pvt_sub_cidr
+  
 }
 
 
