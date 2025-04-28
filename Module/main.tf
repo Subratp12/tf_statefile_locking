@@ -136,7 +136,25 @@ resource "aws_instance" "TF_pvt_ec2_2" {
 
 }
 
+
+# S3 Bucket Creation
+# This module creates an S3 bucket with versioning enabled and a lifecycle rule to prevent destruction.
+
 resource "aws_s3_bucket" "bucket" {
   bucket = var.S3_bucket
+  tags = {
+    Name = "Cust-S3-Bucket"
+  }
 
+lifecycle {
+    prevent_destroy = false
+  }
+
+}
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.bucket.id
+  versioning_configuration {
+    status = var.versioning_status
+  }
 }

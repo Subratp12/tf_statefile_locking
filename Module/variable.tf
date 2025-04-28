@@ -43,11 +43,21 @@ variable "key_name" {
 
 }
 
-variable "S3_bucket" {
-  description = "S3 bucket name for storing files"
-  type        = string
-  default     = ""
 
+variable "S3_bucket" {
+  description = "Name of the S3 bucket"
+  type        = string
+}
+
+variable "prevent_destroy" {
+  description = "Lifecycle rule to prevent destruction"
+  type        = bool
+  default     = false  # Default value to false
+}
+
+variable "versioning_status" {
+  description = "Versioning configuration for the S3 bucket"
+  type        = string
 }
 
 # variable "route_cidr_block" {
@@ -75,3 +85,5 @@ variable "S3_bucket" {
 #   description = "ID of the subnet to associate with the route table"
 #   type        = string
 # }
+
+

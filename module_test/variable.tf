@@ -3,10 +3,6 @@ variable "vpc_cidr" {
   default = ""
 
 }
-variable "aws_IG" {
-  description = "Internet Gateway for the VPC"
-  type        = string
-}
 
 variable "public_subnet_cidr" {
   description = "List of public subnet CIDRs"
@@ -49,4 +45,20 @@ variable "key_name" {
   type    = string
   default = ""
 
+}
+
+variable "S3_bucket" {
+  description = "Name of the S3 bucket"
+  type        = string
+}
+
+variable "prevent_destroy" {
+  description = "Lifecycle rule to prevent destruction"
+  type        = bool
+  default     = false  # Default value to false
+}
+
+variable "versioning_status" {
+  description = "Versioning configuration for the S3 bucket"
+  type        = string
 }
