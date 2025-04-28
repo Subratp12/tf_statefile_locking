@@ -1,0 +1,1 @@
+'This is a local execution example'.Instance public IP is 3.110.42.128 
