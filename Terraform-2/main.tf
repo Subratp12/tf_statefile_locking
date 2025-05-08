@@ -1,7 +1,7 @@
 resource "aws_instance" "cust_ec2" {
-  ami           = "ami-002f6e91abff6eb96"  # Replace with a valid AMI ID for ap-south-1
+  ami           = "ami-062f0cc54dbfd8ef1"  # Replace with a valid AMI ID for ap-south-1
   instance_type = "t2.micro"
-  key_name      = "AWScustkey"
+  key_name      = "AWScustomkey"
 tags = {
   Name = "Cust-EC2"
   }
