@@ -3,7 +3,7 @@ resource "aws_instance" "cust_ec2" {
   instance_type = "t2.micro"
   key_name      = "AWScustomkey"
 tags = {
-  Name = "EC3"
+  Name = "EC4"
   }
 
 }
