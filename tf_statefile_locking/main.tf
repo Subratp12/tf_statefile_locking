@@ -18,3 +18,15 @@ resource "aws_subnet" "himansu_subnet" {
     Name = "subrat-subnet"
   }
 }
+
+resource "aws_instance" "example" {
+  ami           = "ami-0b32d400456908bf9"  # Example AMI for Amazon Linux 2
+  instance_type = "t2.micro"
+  subnet_id     = "subnet-0ef215cc011e0f20d"  # Existing subnet in your VPC
+
+  # vpc_security_group_ids = ["sg-0123456789abcdef0"]  # Existing SG
+  tags = {
+     Name = "subrat-EC2"
+  }
+
+}
