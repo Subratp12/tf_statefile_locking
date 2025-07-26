@@ -6,6 +6,20 @@ resource "aws_instance" "EC2_instance" {
   }
 }
 
+resource "aws_instance" "my_ec2" {
+  ami = "ami-0d0ad8bb301edb745"
+    instance_type = "t2.micro"
+    key_name = "mumbai"
+    tags = {
+      Name = "subrat-2"
+
+    }
+ lifecycle {
+   ignore_changes = [ tags, tags_all ]
+ }
+}
+
+
 resource "aws_s3_bucket" "S3_bucket" {
   bucket = "subpad-bucket"
   tags = {
@@ -67,3 +81,4 @@ resource "aws_dynamodb_table" "DynamoDB_table" {
     Environment = "Dev"
   }
 }
+
